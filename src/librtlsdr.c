@@ -39,7 +39,7 @@
 #define LIBUSB_CALL
 #endif
 
-/* libusb < 1.0.9 doesn't have libusb_handle_events_timeout_completed */
+/* libusb < 1.0.9 doesn't have libusb_handle_events_uut_completed */
 #ifndef HAVE_LIBUSB_HANDLE_EVENTS_TIMEOUT_COMPLETED
 #define libusb_handle_events_timeout_completed(ctx, tv, c) \
 	libusb_handle_events_timeout(ctx, tv)
@@ -364,7 +364,7 @@ static rtlsdr_dongle_t known_devices[] = {
 
 #define CTRL_IN		(LIBUSB_REQUEST_TYPE_VENDOR | LIBUSB_ENDPOINT_IN)
 #define CTRL_OUT	(LIBUSB_REQUEST_TYPE_VENDOR | LIBUSB_ENDPOINT_OUT)
-#define CTRL_TIMEOUT	300
+#define CTRL_TIMEOUT	600
 #define BULK_TIMEOUT	0
 
 #define EEPROM_ADDR	0xa0
